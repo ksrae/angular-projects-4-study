@@ -1,1 +1,14 @@
-login
+<h1>LOGIN</h1>
+
+<form [formGroup]="loginFormGroup" (ngSubmit)="submit($event)">
+  <label for="email">EMAIL: </label>
+  <input id="email" type="text" formControlName="email">
+
+  <label for="password">PASSWORD: </label>
+  <input id="password" type="password" formControlName="password">
+
+  <button type="submit">SUBMIT</button>
+</form>
+
+<div *ngIf="isValid">VALID</div>
+<div *ngIf="!isValid">INVALID</div>
