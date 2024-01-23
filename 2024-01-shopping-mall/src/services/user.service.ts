@@ -5,7 +5,7 @@ import { UserModel } from '../models/user.model';
   providedIn: 'root'
 })
 export class UserService {
-  user!: UserModel;
+  user: UserModel | undefined;
 
   setUser(email: string) {
     this.user = {
@@ -13,7 +13,12 @@ export class UserService {
     }
   };
 
-  hasUser(): boolean {
+  isLoggedin(): boolean {
+    console.log(this.user);
     return this.user?.email ? true: false;
+  }
+
+  logout() {
+    this.user = undefined;
   }
 }

@@ -1,0 +1,5 @@
+<a *ngIf="!isLoggedIn" [routerLink]="['/login']" routerLinkActive="router-link-active">Sign In</a>
+<a *ngIf="!isLoggedIn" [routerLink]="['/register']" routerLinkActive="router-link-active">Sign Up</a>
+<a *ngIf="isLoggedIn" [routerLink]="['/main/profile']" routerLinkActive="router-link-active">Profile</a>
+<a *ngIf="isLoggedIn" [routerLink]="['/main/cart']" routerLinkActive="router-link-active">Cart</a>
+

@@ -1,20 +1,23 @@
-import { Component, ChangeDetectionStrategy, OnInit, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { ActivatedRoute, RouterModule } from '@angular/router';
+import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
+import { Router, RouterModule } from '@angular/router';
+import { UserService } from '../../../../services/user.service';
 
 @Component({
   selector: 'app-profile',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [
+    RouterModule
+  ],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ProfileComponent implements OnInit {
-  activateRoute = inject(ActivatedRoute);
+export class ProfileComponent {
+  userService = inject(UserService);
+  router = inject(Router);
 
-  ngOnInit(): void {
-    console.log(this.activateRoute.snapshot);
-    console.log(this.activateRoute.snapshot.data['data']);
+  logout(e: Event) {
+    this.userService.logout();
+    this.router.navigate(['/login']);
   }
 }

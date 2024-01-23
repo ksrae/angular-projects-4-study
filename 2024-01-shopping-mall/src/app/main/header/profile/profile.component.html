@@ -1,2 +1,16 @@
-profile
+<ul>
+  <li>
+    <a [routerLink]="['./history']" routerLinkActive="router-link-active">History</a>
+  </li>
+  <li>
+    <a [routerLink]="['./edit']" routerLinkActive="router-link-active">Profile Edit</a>
+  </li>
+  <li>
+    <a [routerLink]="['./qna']" routerLinkActive="router-link-active">QnA</a>
+  </li>
+  <li>
+    <button (click)="logout($event)">LOG OUT</button>
+  </li>
+</ul>
+
 <router-outlet></router-outlet>
