@@ -1,20 +1,16 @@
 import { inject } from '@angular/core';
-import { ActivatedRoute, ActivatedRouteSnapshot, CanActivateFn, ResolveFn, Router, RouterStateSnapshot } from "@angular/router";
+import { ActivatedRoute, ActivatedRouteSnapshot, CanActivateFn, Router, RouterStateSnapshot } from "@angular/router";
+import { UserService } from '../services/user.service';
 
 export const profileGuard: CanActivateFn = (route: ActivatedRouteSnapshot, state: RouterStateSnapshot) => {
+  const userService = inject(UserService);
+
   const router = inject(Router);
   const activateRoute = inject(ActivatedRoute);
 
-  //
-  // router.navigate(['./login'], {relativeTo: activateRoute.root});
+  if(!userService.isLoggedin()) {
+    router.navigate(['./login'], {relativeTo: activateRoute.root});
+  }
 
   return true;
-}
-
-
-
-export const profileResolve: ResolveFn<{id:number}> = (route: ActivatedRouteSnapshot, state: RouterStateSnapshot) => {
-  return {
-    id: 0
-  }
 }

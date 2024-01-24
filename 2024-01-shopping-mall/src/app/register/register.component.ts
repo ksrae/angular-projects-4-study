@@ -37,10 +37,11 @@ export class RegisterComponent {
   }
 
   get emailControl() { return this.registerFormGroup.get('email'); }
+  get passwordControl() { return this.registerFormGroup.get('password'); }
 
   submit(e: any) {
     if(this.isValid) {
-      this.userService.setUser(this.emailControl?.value);
+      this.userService.setUser(this.emailControl?.value, this.passwordControl?.value);
       this.router.navigateByUrl('/main');
     }
   }

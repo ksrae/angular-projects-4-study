@@ -1,1 +1,14 @@
-profile edit
+<label for="password">PASSWORD: </label>
+<input id="password" type="password" [formControl]="password">
+<br/>
+
+<label for="newPassword">New PASSWORD: </label>
+<input id="newPassword" type="password" [formControl]="newPassword">
+<br/>
+
+<label for="newPasswordConfirm">PASSWORD Confirm: </label>
+<input id="newPasswordConfirm" type="password" [formControl]="newPasswordConfirm">
+<br/>
+
+<p *ngIf="!isValid">INVALID</p>
+<button (click)="submit()">Submit</button>

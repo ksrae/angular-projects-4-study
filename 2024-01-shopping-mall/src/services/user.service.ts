@@ -7,9 +7,10 @@ import { UserModel } from '../models/user.model';
 export class UserService {
   user: UserModel | undefined;
 
-  setUser(email: string) {
+  setUser(email: string, password: string) {
     this.user = {
-      email
+      email,
+      password
     }
   };
 

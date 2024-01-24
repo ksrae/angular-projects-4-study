@@ -1,1 +1,15 @@
-qna
+<form [formGroup]="qnaFormGroup">
+  <!-- select -->
+  <select formControlName="type">
+    <option value="">--Please choose an option--</option>
+    <option value="1">배송문의</option>
+    <option value="2">주문문의</option>
+    <option value="3">환불문의</option>
+  </select>
+  <!-- contents -->
+  <label for="contents">Contents: </label>
+  <textarea id="contents" formControlName="contents"></textarea>
+  <br/>
+  <button (click)="submit()">Submit</button>
+</form>
+

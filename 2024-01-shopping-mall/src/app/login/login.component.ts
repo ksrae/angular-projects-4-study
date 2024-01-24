@@ -37,10 +37,11 @@ export class LoginComponent implements OnInit {
   }
 
   get emailControl() { return this.loginFormGroup.get('email'); }
+  get passwordControl() { return this.loginFormGroup.get('password'); }
 
   submit(e: any) {
     if(this.loginFormGroup.valid) {
-      this.userService.setUser(this.emailControl?.value);
+      this.userService.setUser(this.emailControl?.value, this.passwordControl?.value);
       this.router.navigateByUrl('/main');
     }
   }
