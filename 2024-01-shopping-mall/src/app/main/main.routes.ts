@@ -4,10 +4,13 @@ import { ProductComponent } from './products/product/product.component';
 import { profileGuard } from '../../guards/profile.guard';
 import { CartComponent } from './cart/cart.component';
 import { PurchaseComponent } from './purchase/purchase.component';
+import { ProductsComponent } from './products/products.component';
 
 
 export const mainRoutes: Routes = [
   {path: '', component: MainComponent, children: [
+    {path: '', redirectTo: 'products', pathMatch: 'full'},
+    {path: 'products', component: ProductsComponent},
     {path: 'product/:id', component: ProductComponent},
     {path: 'profile',
       canActivate: [profileGuard],

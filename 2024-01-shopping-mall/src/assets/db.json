@@ -134,7 +134,7 @@
   {
     "id": 17,
     "title": "동서식품 미떼 핫초코 민트초코 10T",
-    "image": "https://img.danawa.com/prod_img/500000/294/461/img/15461294_1.jpg?shrink=330:*&_v=20211019093233",
+    "image": "https://img.danawa.com/prod_img/500000/294/461/img/15461294_1.jpg",
     "price": 5500,
     "quantity": 1,
     "description": ""
@@ -142,7 +142,7 @@
   {
     "id": 18,
     "title": "테비토퍼 아리아리 닭가슴살 22g (100개)",
-    "image": "https://img.danawa.com/prod_img/500000/535/108/img/19108535_1.jpg?shrink=330:*&_v=20230222145021",
+    "image": "https://img.danawa.com/prod_img/500000/535/108/img/19108535_1.jpg",
     "price": 17400,
     "quantity": 100,
     "description": ""
@@ -182,7 +182,7 @@
   {
     "id": 23,
     "title": "네파 C-TR 에어그램 써모 후디 다운 자켓 7I72061",
-    "image": "https://img.danawa.com/prod_img/500000/117/714/img/17714117_1.jpg?shrink=330:*&_v=20220824124914",
+    "image": "https://img.danawa.com/prod_img/500000/117/714/img/17714117_1.jpg",
     "price": 1340000,
     "quantity": 1,
     "description": ""
@@ -190,7 +190,7 @@
   {
     "id": 24,
     "title": "나르왈 Freo X Ultra",
-    "image": "https://img.danawa.com/prod_img/500000/616/620/img/29620616_1.jpg?shrink=330:*&_v=20231227105116",
+    "image": "https://img.danawa.com/prod_img/500000/616/620/img/29620616_1.jpg",
     "price": 110517,
     "quantity": 1,
     "description": ""
@@ -198,10 +198,10 @@
   {
     "id": 25,
     "title": "DJI 오즈모 액션4 (기본)",
-    "image": "https://img.danawa.com/prod_img/500000/845/037/img/26037845_1.jpg?shrink=330:*&_v=20240110101848",
+    "image": "https://img.danawa.com/prod_img/500000/845/037/img/26037845_1.jpg",
     "price": 446000,
     "quantity": 1,
-    "description": "https://img.danawa.com/prod_img/500000/204/278/img/4278204_1.jpg?shrink=500:500"
+    "description": "https://img.danawa.com/prod_img/500000/204/278/img/4278204_1.jpg"
   },
   {
     "id": 26,
@@ -214,7 +214,7 @@
   {
     "id": 27,
     "title": "라코스테 키즈 클래식 체크패턴 가방&신발주머니 세트",
-    "image": "https://img.danawa.com/prod_img/500000/738/897/img/20897738_1.jpg?shrink=330:*&_v=20230705120017",
+    "image": "https://img.danawa.com/prod_img/500000/738/897/img/20897738_1.jpg",
     "price": 70690,
     "quantity": 1,
     "description": ""
@@ -222,7 +222,7 @@
   {
     "id": 28,
     "title": "휠라키즈 휠라 아동용 솔타 KD 운동화",
-    "image": "vhttps://img.danawa.com/prod_img/500000/898/451/img/27451898_1.jpg?shrink=330:*&_v=20230807180852",
+    "image": "https://img.danawa.com/prod_img/500000/898/451/img/27451898_1.jpg",
     "price": 69930,
     "quantity": 1,
     "description": ""

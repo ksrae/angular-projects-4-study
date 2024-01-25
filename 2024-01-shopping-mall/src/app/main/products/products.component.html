@@ -1,0 +1,18 @@
+<table>
+  <thead>
+    <th>ID</th>
+    <th>Image</th>
+    <th>Title</th>
+    <th>Price</th>
+    <th>Quantity</th>
+    <th>Description</th>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let product of (productList$ | async)">
+      <tr (click)="select(product)">
+        <!-- <td><img src="{{product.title}}"></td> -->
+        <td>{{product.title}}</td>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>

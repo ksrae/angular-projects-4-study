@@ -9,8 +9,7 @@ import { tap } from 'rxjs';
   standalone: true,
   imports: [
     CommonModule,
-    RouterModule,
-    HttpClientModule
+    RouterModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
@@ -18,11 +17,8 @@ import { tap } from 'rxjs';
 })
 export class AppComponent implements OnInit {
   title = 'shopping-mall';
-  http = inject(HttpClient);
 
   ngOnInit(): void {
-    this.http.get('/assets/db.json').pipe(
-      tap(res => console.log({res}))
-    ).subscribe();
+
   }
 }
