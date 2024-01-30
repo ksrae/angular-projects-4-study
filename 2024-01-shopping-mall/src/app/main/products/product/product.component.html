@@ -1,1 +1,13 @@
 <h1>PRODUCT</h1>
+
+  <button (click)="addToCart()">Add to Cart</button>
+  <button (click)="buy()">Buy now</button>
+  <ul>
+    <li>{{product.id}}</li>
+    <li><img [src]="product.image"></li>
+    <li>제목: {{product.title}}</li>
+    <li>가격: {{product.price}}</li>
+    <li>수량: {{product.quantity}}</li>
+    <li *ngIf="product.description"><img [src]="product.description"></li>
+  </ul>
+

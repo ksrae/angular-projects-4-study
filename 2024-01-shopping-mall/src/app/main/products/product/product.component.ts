@@ -1,19 +1,31 @@
-import { Component, OnInit, inject, ChangeDetectionStrategy } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
+import { NgIf } from '@angular/common';
 import { ActivatedRoute, RouterModule } from '@angular/router';
+import { ProductModel } from '../../../../models/product.model';
+import { CartService } from '../../../../services/cart.service';
 
 @Component({
   selector: 'app-product',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [
+    NgIf,
+    RouterModule
+  ],
   templateUrl: './product.component.html',
   styleUrl: './product.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ProductComponent implements OnInit {
+export class ProductComponent {
   activatedRoute = inject(ActivatedRoute);
+  cartService = inject(CartService);
 
-  ngOnInit(): void {
-    console.log(this.activatedRoute.snapshot, this.activatedRoute.snapshot.params['id']);
+  product: ProductModel = this.activatedRoute.snapshot.data['data']['product'];
+
+  addToCart() {
+
+  }
+
+  buy() {
+
   }
 }
