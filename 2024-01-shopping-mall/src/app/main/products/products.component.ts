@@ -21,7 +21,7 @@ export class ProductsComponent implements OnInit {
   router = inject(Router);
   cdr = inject(ChangeDetectorRef);
 
-  productList$ = this.productService.getProducts();
+  productList$ = this.productService.products$;
 
   ngOnInit(): void {
 

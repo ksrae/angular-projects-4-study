@@ -9,8 +9,9 @@ export const productGuard: CanActivateFn = (route: ActivatedRouteSnapshot, state
   const router = inject(Router);
   const id = route.params['id'];
 
+
   return getProduct(id).pipe(
-    first(),
+
     map(product => {
       if(product) {
         return true;
@@ -25,7 +26,7 @@ export const productResolve: ResolveFn<any> = (route: ActivatedRouteSnapshot, st
   const id = route.params['id'];
 
   return getProduct(id).pipe(
-    first(),
+
     map(product => {
       return {product: product};
     })
@@ -34,5 +35,11 @@ export const productResolve: ResolveFn<any> = (route: ActivatedRouteSnapshot, st
 
 function getProduct(id: number): Observable<ProductModel | undefined> {
   const productService = inject(ProductService);
-  return productService.getProduct(id);
+    return productService.products$.pipe(
+
+    map(products => {
+      return products.find(product => Number(product.id) === Number(id));
+    })
+  )
+  // return productService.getProduct(id);
 }

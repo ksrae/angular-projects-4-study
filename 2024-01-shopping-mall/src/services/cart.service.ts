@@ -1,9 +1,15 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { ProductModel } from '../models/product.model';
+import { ProductService } from './product.service';
 
 @Injectable({providedIn: 'root'})
 export class CartService {
+  productService = inject(ProductService);
   cartItem: ProductModel[] = [];
+
+  constructor() {
+
+  }
 
   add(item: ProductModel) {
     const isExist = this.cartItem.some(cart => cart.id === item.id);
@@ -19,7 +25,10 @@ export class CartService {
         return cart;
       })
     } else {
-      this.cartItem.push(item);
+      this.cartItem.push({
+        ...item,
+        quantity: 1
+      });
     }
   }
 
