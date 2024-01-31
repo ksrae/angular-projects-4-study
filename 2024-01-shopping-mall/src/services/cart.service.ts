@@ -30,6 +30,7 @@ export class CartService {
         quantity: 1
       });
     }
+    console.log(this.cartItem);
   }
 
   remove(itemId: number) {

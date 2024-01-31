@@ -23,6 +23,7 @@ export const mainRoutes: Routes = [
       loadChildren: () => import('./header/profile/profile.routes').then(m => m.profileRoutes)
     },
     {path: 'cart', component: CartComponent },
-    {path: 'purchase', component: PurchaseComponent }
+    {path: 'purchase', component: PurchaseComponent },
+    {path: 'purchase/:id', component: PurchaseComponent }
   ]},
 ];

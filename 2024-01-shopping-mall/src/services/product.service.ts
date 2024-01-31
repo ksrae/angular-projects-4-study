@@ -20,4 +20,24 @@ export class ProductService {
       })
     );
   }
+
+  buy(productList: ProductModel[]) {
+    this.products$ = this.products$.pipe(
+      first(),
+      map(products => {
+        return products.map(product => {
+          const exist = productList.find(item => item.id === product.id);
+          if(exist) {
+
+            return {
+              ...product,
+              quantity: product.quantity - exist.quantity,
+            }
+          }
+
+          return product;
+        })
+      })
+    );
+  }
 }

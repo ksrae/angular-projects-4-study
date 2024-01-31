@@ -1,6 +1,6 @@
 import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { NgIf } from '@angular/common';
-import { ActivatedRoute, RouterModule } from '@angular/router';
+import { ActivatedRoute, RouterModule, Router } from '@angular/router';
 import { ProductModel } from '../../../../models/product.model';
 import { CartService } from '../../../../services/cart.service';
 
@@ -17,15 +17,16 @@ import { CartService } from '../../../../services/cart.service';
 })
 export class ProductComponent {
   activatedRoute = inject(ActivatedRoute);
+  router = inject(Router);
   cartService = inject(CartService);
 
   product: ProductModel = this.activatedRoute.snapshot.data['data']['product'];
 
   addToCart() {
-
+    this.cartService.add(this.product);
   }
 
   buy() {
-
+    this.router.navigate([`/main/purchase/${this.product.id}`]);
   }
 }

@@ -1,7 +1,8 @@
 import { Component, inject, ChangeDetectionStrategy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
 import { CartService } from '../../../services/cart.service';
+import { ProductModel } from '../../../models/product.model';
 
 @Component({
   selector: 'app-cart',
@@ -13,12 +14,15 @@ import { CartService } from '../../../services/cart.service';
 })
 export class CartComponent implements OnInit {
   cartService = inject(CartService);
-  cartList = this.cartService.cartItem;
+  router = inject(Router);
+  cartList: ProductModel[] = [];
 
   ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
+    this.cartList = this.cartService.cartItem;
     console.log(this.cartList);
+  }
+  buy() {
+    this.router.navigate(['/main/purchase']);
   }
 }
 
